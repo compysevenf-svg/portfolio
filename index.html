@@ -89,13 +89,9 @@ transform:translateY(-5px);
 background:rgba(255,255,255,0.08);
 }
 
-<head>
-
-<style>
-
 .projects{
 display:grid;
-grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
@@ -109,13 +105,6 @@ text-decoration:none;
 border-radius:8px;
 }
 
-.hero img{
-width:150px;
-border-radius:50%;
-border:4px solid #38bdf8;
-margin-top:20px;
-}
-
 footer{
 text-align:center;
 padding:40px;
@@ -123,52 +112,9 @@ color:#64748b;
 }
 
 </style>
-
 </head>
 
 <body>
-
-
-<script>
-const text = [
-"Web Developer",
-"Python Learner",
-"Tech Enthusiast",
-"Building the future with code"
-];
-
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
-
-function type(){
-
-if(count === text.length){
-count = 0;
-}
-
-currentText = text[count];
-letter = currentText.slice(0, ++index);
-
-document.getElementById("typing").textContent = letter;
-
-if(letter.length === currentText.length){
-count++;
-index = 0;
-setTimeout(type, 1200);
-}else{
-setTimeout(type, 60);
-}
-
-}
-
-type();
-</script>
-
-<body>
-
-
 
 <canvas id="particles"></canvas>
 
@@ -184,17 +130,11 @@ type();
 
 </nav>
 
-<h1>Halo, saya Fadil dilong 👋</h1>
-
-<p class="subtitle">
-<span id="typing"></span>
-</p>
-
-<br>
-
-<a class="btn" href="#">Download CV</a>
+<section class="hero">
 
 <img src="https://i.imgur.com/2DhmtJ4.png">
+
+<h1>Halo, saya Fadil 👋</h1>
 
 <p class="subtitle">
 Web Developer | Python Learner | Tech Enthusiast
@@ -311,78 +251,5 @@ draw();
 
 </script>
 
-<script>
-const text = [
-"Web Developer",
-"Python Learner",
-"Tech Enthusiast",
-"Building the future with code"
-];
-
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
-
-function type(){
-
-if(count === text.length){
-count = 0;
-}
-
-currentText = text[count];
-letter = currentText.slice(0, ++index);
-
-document.getElementById("typing").textContent = letter;
-
-if(letter.length === currentText.length){
-count++;
-index = 0;
-setTimeout(type, 1200);
-}else{
-setTimeout(type, 60);
-}
-
-}
-
-type();
-</script>
-<script>
-const text = [
-"Web Developer",
-"Python Learner",
-"Tech Enthusiast",
-"Building the future with code"
-];
-
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
-
-function type(){
-
-if(count === text.length){
-count = 0;
-}
-
-currentText = text[count];
-letter = currentText.slice(0, ++index);
-
-document.getElementById("typing").textContent = letter;
-
-if(letter.length === currentText.length){
-count++;
-index = 0;
-setTimeout(type, 1200);
-}else{
-setTimeout(type, 60);
-}
-
-}
-
-type();
-</script>
 </body>
 </html>
-
