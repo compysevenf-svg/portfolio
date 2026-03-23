@@ -114,7 +114,45 @@ color:#64748b;
 </style>
 </head>
 
+<script>
+const text = [
+"Web Developer",
+"Python Learner",
+"Tech Enthusiast",
+"Building the future with code"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+function type(){
+
+if(count === text.length){
+count = 0;
+}
+
+currentText = text[count];
+letter = currentText.slice(0, ++index);
+
+document.getElementById("typing").textContent = letter;
+
+if(letter.length === currentText.length){
+count++;
+index = 0;
+setTimeout(type, 1200);
+}else{
+setTimeout(type, 60);
+}
+
+}
+
+type();
+
 <body>
+
+
 
 <canvas id="particles"></canvas>
 
@@ -130,11 +168,18 @@ color:#64748b;
 
 </nav>
 
-<section class="hero">
+<h1>Halo, saya Fadil dilong 👋</h1>
+
+<p class="subtitle">
+<span id="typing"></span>
+</p>
+
+<br>
+
+<a class="btn" href="cv-fadil.pdf"
+download>Download CV</a>
 
 <img src="https://i.imgur.com/2DhmtJ4.png">
-
-<h1>Halo, saya Fadil 👋</h1>
 
 <p class="subtitle">
 Web Developer | Python Learner | Tech Enthusiast
@@ -251,5 +296,78 @@ draw();
 
 </script>
 
+<script>
+const text = [
+"Web Developer",
+"Python Learner",
+"Tech Enthusiast",
+"Building the future with code"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+function type(){
+
+if(count === text.length){
+count = 0;
+}
+
+currentText = text[count];
+letter = currentText.slice(0, ++index);
+
+document.getElementById("typing").textContent = letter;
+
+if(letter.length === currentText.length){
+count++;
+index = 0;
+setTimeout(type, 1200);
+}else{
+setTimeout(type, 60);
+}
+
+}
+
+type();
+</script>
+<script>
+const text = [
+"Web Developer",
+"Python Learner",
+"Tech Enthusiast",
+"Building the future with code"
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+function type(){
+
+if(count === text.length){
+count = 0;
+}
+
+currentText = text[count];
+letter = currentText.slice(0, ++index);
+
+document.getElementById("typing").textContent = letter;
+
+if(letter.length === currentText.length){
+count++;
+index = 0;
+setTimeout(type, 1200);
+}else{
+setTimeout(type, 60);
+}
+
+}
+
+type();
+</script>
 </body>
 </html>
+
