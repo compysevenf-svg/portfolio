@@ -3,11 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fadil | Web Developer</title>
+<title>Fadil | Developer</title>
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Arial;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
 
 body{
 background:#0b1220;
@@ -16,31 +21,21 @@ line-height:1.6;
 }
 
 nav{
-position:sticky;
-top:0;
-background:#020617;
-padding:15px 25px;
 display:flex;
 justify-content:space-between;
-align-items:center;
-z-index:10;
+padding:20px;
+background:#020617;
 }
 
 nav a{
 color:#cbd5f5;
 text-decoration:none;
 margin-left:15px;
-font-size:14px;
-}
-
-nav a:hover{
-color:white;
 }
 
 .hero{
 text-align:center;
 padding:80px 20px;
-background:linear-gradient(180deg,#0f172a,#020617);
 }
 
 .hero img{
@@ -48,32 +43,15 @@ width:140px;
 height:140px;
 border-radius:50%;
 border:4px solid #38bdf8;
-margin-bottom:20px;
 }
 
 .hero h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.subtitle{
-color:#94a3b8;
-max-width:600px;
-margin:auto;
-}
-
-.social{
+font-size:40px;
 margin-top:20px;
 }
 
-.social a{
-display:inline-block;
-margin:8px;
-padding:10px 18px;
-background:#38bdf8;
-color:black;
-text-decoration:none;
-border-radius:8px;
+.typing{
+color:#38bdf8;
 font-weight:bold;
 }
 
@@ -85,8 +63,8 @@ padding:50px 20px;
 
 .section-title{
 text-align:center;
-font-size:30px;
 margin-bottom:30px;
+font-size:30px;
 }
 
 .skills{
@@ -97,46 +75,47 @@ gap:20px;
 
 .skill{
 background:#1e293b;
-padding:25px;
-border-radius:12px;
+padding:20px;
+border-radius:10px;
 text-align:center;
-transition:0.3s;
-}
-
-.skill:hover{
-transform:translateY(-5px);
-background:#334155;
 }
 
 .projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px;
 }
 
-.project-card{
+.project{
 background:#1e293b;
-padding:25px;
-border-radius:12px;
-transition:0.3s;
+padding:20px;
+border-radius:10px;
 }
 
-.project-card:hover{
-transform:translateY(-5px);
-background:#334155;
+.project a{
+display:inline-block;
+margin-top:10px;
+padding:8px 15px;
+background:#38bdf8;
+color:black;
+text-decoration:none;
+border-radius:6px;
 }
 
-.project-card h3{
-margin-bottom:10px;
-}
-
-.project-card p{
+.about{
+text-align:center;
+max-width:700px;
+margin:auto;
 color:#94a3b8;
 }
 
-.btn{
+.contact{
+text-align:center;
+}
+
+.contact a{
 display:inline-block;
-margin-top:15px;
+margin:10px;
 padding:10px 18px;
 background:#38bdf8;
 color:black;
@@ -150,17 +129,6 @@ padding:40px;
 color:#64748b;
 }
 
-.fade{
-opacity:0;
-transform:translateY(20px);
-transition:0.6s;
-}
-
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
-
 </style>
 </head>
 
@@ -168,42 +136,50 @@ transform:translateY(0);
 
 <nav>
 <div><b>FadilDev</b></div>
+
 <div>
 <a href="#">Home</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
 </div>
+
 </nav>
 
-<section class="hero fade">
+<section class="hero">
 
 <img src="https://i.imgur.com/2DhmtJ4.png">
 
 <h1>Halo, saya Fadil 👋</h1>
 
-<p class="subtitle">
-Saya pelajar yang sedang belajar menjadi Web Developer dan membangun website modern.
-</p>
-
-<div class="social">
-<a href="https://github.com/fadilirfandikendari-maker">GitHub</a>
-<a href="#">Contact</a>
-</div>
+<p class="typing" id="typing"></p>
 
 </section>
 
 <div class="container">
 
-<h2 id="skills" class="section-title fade">Skills</h2>
+<h2 class="section-title">About Me</h2>
+
+<p class="about">
+Saya seorang pelajar yang sedang belajar menjadi Web Developer.
+Saya suka membangun website, belajar teknologi baru,
+dan mengembangkan project menggunakan Python dan Web.
+</p>
+
+</div>
+
+<div class="container">
+
+<h2 id="skills" class="section-title">Skills</h2>
 
 <div class="skills">
 
-<div class="skill fade">Python</div>
-<div class="skill fade">HTML</div>
-<div class="skill fade">CSS</div>
-<div class="skill fade">Flask</div>
-<div class="skill fade">Git</div>
-<div class="skill fade">Linux</div>
+<div class="skill">Python</div>
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">Flask</div>
+<div class="skill">Git</div>
+<div class="skill">Linux</div>
 
 </div>
 
@@ -211,23 +187,31 @@ Saya pelajar yang sedang belajar menjadi Web Developer dan membangun website mod
 
 <div class="container">
 
-<h2 id="projects" class="section-title fade">Projects</h2>
+<h2 id="projects" class="section-title">Projects</h2>
 
 <div class="projects">
 
-<div class="project-card fade">
+<div class="project">
 <h3>Portfolio Website</h3>
-<p>Website portfolio pribadi yang dibuat menggunakan HTML dan CSS.</p>
-<a class="btn" href="https://github.com/fadilirfandikendari-maker">Lihat GitHub</a>
+<p>Website portfolio pribadi menggunakan HTML dan CSS.</p>
+<a href="https://github.com/fadilirfandikendari-maker">GitHub</a>
 </div>
 
-<div class="project-card fade">
+<div class="project">
 <h3>Python Bot</h3>
 <p>Bot sederhana yang dibuat menggunakan Python.</p>
-<a class="btn" href="https://github.com/fadilirfandikendari-maker">Lihat Project</a>
+<a href="https://github.com/fadilirfandikendari-maker">Project</a>
 </div>
 
 </div>
+
+</div>
+
+<div class="container contact" id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<a href="https://github.com/fadilirfandikendari-maker">GitHub</a>
 
 </div>
 
@@ -239,17 +223,25 @@ Saya pelajar yang sedang belajar menjadi Web Developer dan membangun website mod
 
 <script>
 
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
+const text="Web Developer | Python Learner | Tech Enthusiast";
 
-document.querySelectorAll(".fade").forEach(el=>{
-observer.observe(el);
-});
+let i=0;
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,80);
+
+}
+
+}
+
+typing();
 
 </script>
 
