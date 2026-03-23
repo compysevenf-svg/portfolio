@@ -7,31 +7,40 @@
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Arial;}
 
 body{
-background:#0f172a;
+background:#0b1220;
 color:white;
+line-height:1.6;
 }
 
 nav{
+position:sticky;
+top:0;
+background:#020617;
+padding:15px 25px;
 display:flex;
 justify-content:space-between;
-padding:20px;
-background:#020617;
+align-items:center;
+z-index:10;
 }
 
 nav a{
-color:white;
+color:#cbd5f5;
 text-decoration:none;
 margin-left:15px;
+font-size:14px;
 }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
+nav a:hover{
+color:white;
+}
+
+.hero{
 text-align:center;
+padding:80px 20px;
+background:linear-gradient(180deg,#0f172a,#020617);
 }
 
 .hero img{
@@ -39,40 +48,90 @@ width:140px;
 height:140px;
 border-radius:50%;
 border:4px solid #38bdf8;
+margin-bottom:20px;
 }
 
 .hero h1{
-font-size:40px;
-margin-top:20px;
+font-size:42px;
+margin-bottom:10px;
 }
 
 .subtitle{
 color:#94a3b8;
-margin-top:10px;
+max-width:600px;
+margin:auto;
+}
+
+.social{
+margin-top:20px;
+}
+
+.social a{
+display:inline-block;
+margin:8px;
+padding:10px 18px;
+background:#38bdf8;
+color:black;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:50px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:30px;
+margin-bottom:30px;
 }
 
 .skills{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:15px;
-margin-top:30px;
+gap:20px;
 }
 
 .skill{
 background:#1e293b;
-padding:20px;
-border-radius:10px;
+padding:25px;
+border-radius:12px;
+text-align:center;
+transition:0.3s;
+}
+
+.skill:hover{
+transform:translateY(-5px);
+background:#334155;
 }
 
 .projects{
-margin-top:60px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .project-card{
 background:#1e293b;
-padding:20px;
-margin-top:20px;
-border-radius:10px;
+padding:25px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-5px);
+background:#334155;
+}
+
+.project-card h3{
+margin-bottom:10px;
+}
+
+.project-card p{
+color:#94a3b8;
 }
 
 .btn{
@@ -86,10 +145,20 @@ border-radius:8px;
 }
 
 footer{
-margin-top:60px;
 text-align:center;
+padding:40px;
 color:#64748b;
-padding:20px;
+}
+
+.fade{
+opacity:0;
+transform:translateY(20px);
+transition:0.6s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
 
 </style>
@@ -98,54 +167,61 @@ padding:20px;
 <body>
 
 <nav>
-<div>FadilDev</div>
-
+<div><b>FadilDev</b></div>
 <div>
 <a href="#">Home</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
 </div>
-
 </nav>
 
-<div class="container">
-
-<div class="hero">
+<section class="hero fade">
 
 <img src="https://i.imgur.com/2DhmtJ4.png">
 
 <h1>Halo, saya Fadil 👋</h1>
 
 <p class="subtitle">
-Pelajar yang sedang belajar Web Development dan membangun website modern.
+Saya pelajar yang sedang belajar menjadi Web Developer dan membangun website modern.
 </p>
 
+<div class="social">
+<a href="https://github.com/fadilirfandikendari-maker">GitHub</a>
+<a href="#">Contact</a>
 </div>
 
-<h2 id="skills">Skills</h2>
+</section>
+
+<div class="container">
+
+<h2 id="skills" class="section-title fade">Skills</h2>
 
 <div class="skills">
 
-<div class="skill">Python</div>
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">Flask</div>
-<div class="skill">Git</div>
-<div class="skill">Linux</div>
+<div class="skill fade">Python</div>
+<div class="skill fade">HTML</div>
+<div class="skill fade">CSS</div>
+<div class="skill fade">Flask</div>
+<div class="skill fade">Git</div>
+<div class="skill fade">Linux</div>
 
 </div>
 
-<div class="projects" id="projects">
+</div>
 
-<h2>Projects</h2>
+<div class="container">
 
-<div class="project-card">
+<h2 id="projects" class="section-title fade">Projects</h2>
+
+<div class="projects">
+
+<div class="project-card fade">
 <h3>Portfolio Website</h3>
 <p>Website portfolio pribadi yang dibuat menggunakan HTML dan CSS.</p>
 <a class="btn" href="https://github.com/fadilirfandikendari-maker">Lihat GitHub</a>
 </div>
 
-<div class="project-card">
+<div class="project-card fade">
 <h3>Python Bot</h3>
 <p>Bot sederhana yang dibuat menggunakan Python.</p>
 <a class="btn" href="https://github.com/fadilirfandikendari-maker">Lihat Project</a>
@@ -161,6 +237,21 @@ Pelajar yang sedang belajar Web Development dan membangun website modern.
 
 </footer>
 
+<script>
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
 </body>
 </html>
-
