@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -80,16 +84,23 @@ box-shadow:0 0 20px rgba(0,0,0,0.5);
 
 <h2>My Skills</h2>
 
-<div class="card">
-HTML
+<div class="skills">
+
+<div class="card" data-aos="fade-up">
+<h3>HTML</h3>
+<p>Building web structure</p>
 </div>
 
-<div class="card">
-CSS
+<div class="card" data-aos="fade-up" data-aos-delay="200">
+<h3>CSS</h3>
+<p>Design & animation</p>
 </div>
 
-<div class="card">
-JavaScript
+<div class="card" data-aos="fade-up" data-aos-delay="400">
+<h3>JavaScript</h3>
+<p>Interactive website</p>
+</div>
+
 </div>
 
 </section>
@@ -101,6 +112,30 @@ JavaScript
 <p>Email: dilongkoko@email.com</p>
 
 </section>
+<script>
+AOS.init({
+  duration: 1000,
+  once: true
+});
+</script>
+
+<script>
+const cursor = document.createElement("div");
+cursor.style.width="20px";
+cursor.style.height="20px";
+cursor.style.borderRadius="50%";
+cursor.style.position="fixed";
+cursor.style.background="#00ff9f";
+cursor.style.pointerEvents="none";
+cursor.style.mixBlendMode="difference";
+cursor.style.zIndex="9999";
+document.body.appendChild(cursor);
+
+document.addEventListener("mousemove",e=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+});
+</script>
 
 </body>
 </html>
