@@ -8,6 +8,17 @@
 
 <style>
 
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
 *{
 margin:0;
 padding:0;
@@ -33,7 +44,7 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-
+}
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -190,7 +201,7 @@ Download CV
 <div class="card">Flask</div>
 <div class="card">Git</div>
 <div class="card">Linux</div>
-
+<div class="card reveal">Python</div>
 </div>
 
 </div>
@@ -285,7 +296,24 @@ requestAnimationFrame(draw);
 
 draw();
 
-</script>
 
+<script>
+
+function reveal(){
+let reveals=document.querySelectorAll(".reveal");
+
+for(let i=0;i<reveals.length;i++){
+let windowHeight=window.innerHeight;
+let elementTop=reveals[i].getBoundingClientRect().top;
+let elementVisible=100;
+
+if(elementTop<windowHeight-elementVisible){
+reveals[i].classList.add("active");
+}
+}
+}
+
+window.addEventListener("scroll",reveal);
+</script>
 </body>
 </html>
